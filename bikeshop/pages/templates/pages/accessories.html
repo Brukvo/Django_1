@@ -1,100 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+{% extends 'pages/_base.html' %}
+{% load static %}
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Bike Shop a Ecommerce Category Flat Bootstarp Responsive Website Template| Accessories :: w3layouts</title>
-<link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (Bootstrap's JavaScript plugins) -->
-<script src="/static/js/jquery.min.js"></script>
-<!-- Custom Theme files -->
-<link href="/static/css/form.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Bike-shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--webfont-->
-<link href='http://fonts.googleapis.com/css?family=Roboto:500,900,100,300,700,400' rel='stylesheet' type='text/css'>
-<!--webfont-->
-<!-- dropdown -->
-<script src="/static/js/jquery.easydropdown.js"></script>
-<link href="/static/css/nav.css" rel="stylesheet" type="text/css" media="all"/>
-<script src="/static/js/scripts.js" type="text/javascript"></script>
-<!--js-->
-
-</head>
-<body>
-<!--banner-->
-<script src="/static/js/responsiveslides.min.js"></script>
-<script>  
-    $(function () {
-      $("#slider").responsiveSlides({
-      	auto: false,
-      	nav: true,
-      	speed: 500,
-        namespace: "callbacks",
-        pager: true,
-      });
-    });
-  </script>
-<div class="banner-bg banner-sec">	
-	  <div class="container">
-			 <div class="header">
-			       <div class="logo">
-						 <a href="/"><img src="/static/images/logo.png" alt=""/></a>
-				   </div>							 
-				  <div class="top-nav">										 
-						<label class="mobile_menu" for="mobile_menu">
-						<span>Menu</span>
-						</label>
-						<input id="mobile_menu" type="checkbox">
-					   <ul class="nav">
-						  <li class="dropdown1"><a href="/bicycles/">BICYCLES</a>
-							  <ul class="dropdown2">
-									<li><a href="/bicycles/">FIXED / SINGLE SPEED</a></li>
-									<li><a href="/bicycles/">CITY BIKES</a></li>
-									<li><a href="/bicycles/">PREMIMUN SERIES</a></li>												
-							  </ul>
-						  </li>
-						  <li class="dropdown1"><a href="/parts/">PARTS</a>
-							 <ul class="dropdown2">
-									<li><a href="/parts/">CHAINS</a></li>
-									<li><a href="/parts/">TUBES</a></li>
-									<li><a href="/parts/">TIRES</a></li>
-									<li><a href="/parts/">DISC BREAKS</a></li>
-							  </ul>
-						 </li>      
-						 <li class="dropdown1"><a href="/accessories/">ACCESSORIES</a>
-							 <ul class="dropdown2">
-									<li><a href="/accessories/">LOCKS</a></li>
-										<li><a href="/accessories/">HELMETS</a></li>
-										<li><a href="/accessories/">ARM COVERS</a></li>
-										<li><a href="/accessories/">JERSEYS</a></li>
-							  </ul>
-						 </li>               
-						 <li class="dropdown1"><a href="/not_found/">EXTRAS</a>
-							 <ul class="dropdown2">
-									<li><a href="/not_found/">CLASSIC BELL</a></li>
-									<li><a href="/not_found/">BOTTLE CAGE</a></li>
-									<li><a href="/not_found/">TRUCK GRIP</a></li>
-							  </ul>
-						 </li>
-						  <a class="shop" href="/cart/"><img src="/static/images/cart.png" alt=""/></a>
-					  </ul>
-				 </div>
-				 <div class="clearfix"></div>
-			 </div>
-	  </div> 				 
-</div>
-<!--/banner-->
+{% block 'content' %}
 <div class="parts">
 	 <div class="container">
 		 <h2>BIKE-ACCESSORIES</h2>
@@ -110,7 +17,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 <div class="bike-apparels">
 				 <div class="parts1">
 					 <a href="/single/"><div class="part-sec">					 
-						 <img src="/static/images/a1.jpg" alt=""/>
+						 <img src="{% static 'images/a1.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="#"><h5>Bike Fenders<span>$7.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -118,7 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec">					 
-						 <img src="/static/images/a3.png" alt=""/>
+						 <img src="{% static 'images/a3.png' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Cycling Helmets<span>$50.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -126,7 +33,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec none2">					 
-						 <img src="/static/images/a2.jpg" alt=""/>
+						 <img src="{% static 'images/a2.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Handle Grips<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -134,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec none1">					 
-						 <img src="/static/images/a4.jpg" alt=""/>
+						 <img src="{% static 'images/a4.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Hydration Pack Black<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -146,7 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 
 				 <div class="parts2">
 					 <a href="/single/"><div class="part-sec">					 
-						 <img src="/static/images/a5.jpg" alt=""/>
+						 <img src="{% static 'images/a5.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Electronics<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -154,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec">					 
-						 <img src="/static/images/a6.jpg" alt=""/>
+						 <img src="{% static 'images/a6.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Bike Panniers <span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -162,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec none2">					 
-						 <img src="/static/images/a7.jpg" alt=""/>
+						 <img src="{% static 'images/a7.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Timbre Bell<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -170,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec none1">					 
-						 <img src="/static/images/a8.jpg" alt=""/>
+						 <img src="{% static 'images/a8.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Back Stands<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -182,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 
 				 <div class="parts3">
 					 <a href="/single/"><div class="part-sec">					 
-						 <img src="/static/images/a9.jpg" alt=""/>
+						 <img src="{% static 'images/a9.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Disc Breaks<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -190,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec">					 
-						 <img src="/static/images/a10.jpg" alt=""/>
+						 <img src="{% static 'images/a10.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="#"><h5>Side Stands<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -198,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec none2">					 
-						 <img src="/static/images/a11.jpg" alt=""/>
+						 <img src="{% static 'images/a11.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="#"><h5>Mountain Bike Shoes<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -206,7 +113,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec none1">					 
-						 <img src="/static/images/a12.jpg" alt=""/>
+						 <img src="{% static 'images/a12.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Body Armours<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -218,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 
 				 <div class="parts4">
 					 <a href="/single/"><div class="part-sec bottom-line">					 
-						 <img src="/static/images/a13.jpg" alt=""/>
+						 <img src="{% static 'images/a13.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="#"><h5>Mountain Bags<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -226,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="v"><div class="part-sec bottom-line">					 
-						 <img src="/static/images/a14.jpg" alt=""/>
+						 <img src="{% static 'images/a14.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="#"><h5>Bicycle Headlight<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -234,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec bottom-line none2">					 
-						 <img class="bottle"src="/static/images/a15.jpg" alt=""/>
+						 <img class="bottle"src="{% static 'images/a15.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Water Bottles<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -242,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 </div>
 					 </div></a>
 					 <a href="/single/"><div class="part-sec none1">					 
-						 <img src="/static/images/a16.jpg" alt=""/>
+						 <img src="{% static 'images/a16.jpg' %}" alt=""/>
 						 <div class="part-info">
 							 <a href="/single/"><h5>Bicycle Mirrors<span>$200.00</span></h5></a>
 							 <a class="add-cart" href="/single/">Quick View</a>
@@ -354,25 +261,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 </div>
 	  </div>
 </div>
-<!---->
-<div class="footer">
-	 <div class="container wrap">
-		<div class="logo2">
-			 <a href="/"><img src="/static/images/logo2.png" alt=""/></a>
-		</div>
-		<div class="ftr-menu">
-			 <ul>
-				 <li><a href="/bicycles/">BICYCLES</a></li>
-				 <li><a href="/parts/">PARTS</a></li>
-				 <li><a href="/accessories/">ACCESSORIES</a></li>
-				 <li><a href="/not_found/">EXTRAS</a></li>
-			 </ul>
-		</div>
-		<div class="clearfix"></div>
-	 </div>
-</div>
-<!---->
-
-</body>
-</html>
-
+{% endblock %}

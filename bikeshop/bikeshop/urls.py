@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
+
 from pages.views import index, bicycles, not_found, parts, cart, accessories, single
 
 urlpatterns = [
@@ -27,3 +30,6 @@ urlpatterns = [
     path('accessories/', accessories, name='accessories'),
     path('single/', single, name='single'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

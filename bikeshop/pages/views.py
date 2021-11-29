@@ -72,11 +72,11 @@ def cart(request):
 
 
 def single(request):
+    product = Product.objects.all()[3]
     title = {
         'site': 'ВелоЗапча',
-        'page': 'Одиночный пост'
+        'page': f'{product.name} // {product.category.name}'
         }
-    product = Product.objects.all()[3]
     context = {
         'title': title,
         'product': product

@@ -3,28 +3,78 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'pages/index.html')
+    title = {
+        'site': 'ВелоЗапча',
+        'page': 'Главная'
+        }
+    context = {
+        'title': title
+        }
+    return render(request, 'pages/index.html', context)
 
 
 def bicycles(request):
-    return render(request, 'pages/bicycles.html')
+    title = {
+        'site': 'ВелоЗапча',
+        'page': 'Велики'
+        }
+    context = {
+        'title': title
+        }
+    return render(request, 'pages/bicycles.html', context)
 
 
 def not_found(request):
-    return render(request, 'pages/404.html')
+    title = {
+        'site': 'ВелоЗапча',
+        'page': '404'
+        }
+    context = {
+        'title': title
+        }
+    return render(request, 'pages/404.html', context)
 
 
 def parts(request):
-    return render(request, 'pages/parts.html')
+    title = {
+        'site': 'ВелоЗапча',
+        'page': 'Запчасти'
+        }
+    context = {
+        'title': title
+        }
+    return render(request, 'pages/parts.html', context)
 
 
 def accessories(request):
-    return render(request, 'pages/accessories.html')
+    title = {
+        'site': 'ВелоЗапча',
+        'page': 'Аксессуары'
+        }
+    context = {
+        'title': title
+        }
+    return render(request, 'pages/accessories.html', context)
 
 
 def cart(request):
-    return render(request, 'pages/cart.html')
+    title = {
+        'site': 'ВелоЗапча',
+        'page': 'Корзина'
+        }
+    context = {
+        'title': title
+        }
+    return render(request, 'pages/cart.html', context)
 
 
 def single(request):
-    return render(request, 'pages/single.html')
+    title = {
+        'site': 'ВелоЗапча',
+        'page': 'Одиночный пост'
+        }
+    context = {
+        'title': title
+        }
+    return render(request, 'pages/single.html', context)
+

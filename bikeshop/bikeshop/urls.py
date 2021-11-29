@@ -1,7 +1,7 @@
 """bikeshop URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.0/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -19,11 +19,11 @@ from pages.views import index, bicycles, not_found, parts, cart, accessories, si
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),
-    path('bicycles/', bicycles),
-    path('not_found/', not_found),
-    path('parts/', parts),
-    path('cart/', cart),
-    path('accessories/', accessories),
-    path('single/', single),
+    path('', index, name='main'),
+    path('bicycles/', bicycles, name='bicycles'),
+    path('not_found/', not_found, name='404'),
+    path('parts/', parts, name='parts'),
+    path('cart/', cart, name='cart'),
+    path('accessories/', accessories, name='accessories'),
+    path('single/', single, name='single'),
 ]

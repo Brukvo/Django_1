@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ title.page }} :: {{ title.site }}</title>
+{% include 'inc/css.inc.html' %}
+{% include 'inc/js.inc.html' %}
+{% include 'inc/meta.inc.html' %}
+</head>
+<body>
+
+    {% block 'header' %}
+    <div class="banner-bg banner-sec">
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                        <a href="{% url 'main' %}"><img src="{% static 'images/logo.png' %}" alt=""/></a>
+                </div>
+                {% include 'inc/menu.inc.html' %}
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    {% block 'content' %}
+    <p>Содержимое страницы</p>
+    {% endblock %}
+
+    {% block 'footer' %}
+    <div class="footer">
+        <div class="container wrap">
+            <div class="logo2">
+                <a href="{% url 'main' %}"><img src="{% static 'images/logo2.png' %}" alt=""/></a>
+            </div>
+            <div class="ftr-menu">
+                <ul>
+                    <li><a href="{% url 'bicycles' %}">BICYCLES</a></li>
+                    <li><a href="{% url 'parts' %}">PARTS</a></li>
+                    <li><a href="{% url 'accessories' %}">ACCESSORIES</a></li>
+                    <li><a href="{% url '404' %}">EXTRAS</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    {% endblock %}
+
+</body>
+</html>

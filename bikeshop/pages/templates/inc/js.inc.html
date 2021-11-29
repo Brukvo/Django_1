@@ -1,0 +1,43 @@
+{% load static %}
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script type="application/x-javascript">
+addEventListener(
+    "load", function() {
+        setTimeout(hideURLbar, 0);
+        }, false);
+        function hideURLbar(){
+        window.scrollTo(0,1);
+        }
+</script>
+<script src="{% static 'js/jquery.easydropdown.js' %}"></script>
+<script src="{% static 'js/scripts.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+<script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: false,
+      	nav: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+</script>
+<script>$(document).ready(function(c) {
+    $('.close1').on('click', function(c){
+        $('.cart-header').fadeOut('slow', function(c){
+            $('.cart-header').remove();
+        });
+    });
+});
+</script>
+<script>$(document).ready(function(c) {
+					$('.close2').on('click', function(c){
+							$('.cart-header2').fadeOut('slow', function(c){
+						$('.cart-header2').remove();
+					});
+					});
+					});
+</script>
+

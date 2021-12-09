@@ -2,31 +2,19 @@
 {% load static %}
 
 {% block 'content' %}
+<h3 style="text-align: center;">Категории</h3>
 <div id="cate" class="categories">
     <div class="container">
-        <h3>CATEGORIES</h3>
-        <div class="categorie-grids">
+        <div class="categorie-grids" style="margin: 0 0">
+            {% for category in categories %}
             <a href="/bicycles/">
-                <div class="col-md-4 cate-grid grid1">
-                    <h4>FIXED / SINGLE SPEED</h4>
-                    <p>Are you ready for the 27.5 Revloution ?</p>
-                    <a class="store" href="/bicycles/">GO TO STORE</a>
+                <div class="col-md-6 cate-grid grid2">
+                    <h4>{{ category.name }}</h4>
+                    <p>Категория</p>
+                    <a class="store" href="/bicycles/">В магазин</a>
                 </div>
             </a>
-            <a href="/bicycles/">
-                <div class="col-md-4 cate-grid grid2">
-                    <h4>PREMIMUM SERIES</h4>
-                    <p>Exclusive Bike Components</p>
-                    <a class="store" href="/bicycles/">GO TO STORE</a>
-                </div>
-            </a>
-            <a href="/bicycles/">
-                <div class="col-md-4 cate-grid grid3">
-                    <h4>CITY BIKES</h4>
-                    <p>Street Playground</p>
-                    <a class="store" href="/bicycles/">GO TO STORE</a>
-                </div>
-            </a>
+            {% endfor %}
             <div class="clearfix"></div>
         </div>
     </div>

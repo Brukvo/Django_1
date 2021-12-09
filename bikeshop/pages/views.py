@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from pages.models import Product, Category
 
 # Create your views here.
 def index(request):
@@ -7,8 +7,11 @@ def index(request):
         'site': 'ВелоЗапча',
         'page': 'Главная'
         }
+    categories = Category.objects.all()
+
     context = {
-        'title': title
+        'title': title,
+        'categories': categories
         }
     return render(request, 'pages/index.html', context)
 
@@ -69,12 +72,14 @@ def cart(request):
 
 
 def single(request):
+    product = Product.objects.all()[3]
     title = {
         'site': 'ВелоЗапча',
-        'page': 'Одиночный пост'
+        'page': f'{product.name} // {product.category.name}'
         }
     context = {
-        'title': title
+        'title': title,
+        'product': product
         }
     return render(request, 'pages/single.html', context)
 

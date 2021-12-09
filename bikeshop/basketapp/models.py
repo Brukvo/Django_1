@@ -4,8 +4,8 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.db import models
 
-from authapp.models import ShopUser
-from mainapp.models import Product
+from authapp.models import CommonUser
+from pages.models import Product
 
 
 class BasketQuerySet(models.QuerySet):

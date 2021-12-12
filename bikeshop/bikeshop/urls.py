@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from pages.views import index, bicycles, not_found, parts, cart, accessories, single
+from pages.views import index, bicycles, not_found, parts, cart, accessories, single, product
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +29,7 @@ urlpatterns = [
     path('basket/', include('basketapp.urls', namespace='basket')),
     path('accessories/', accessories, name='accessories'),
     path('single/', single, name='single'),
+    path('product/<int:pk>/', product, name='product'),
     path('auth/', include('authapp.urls', namespace='auth')),
 ]
 

@@ -1,43 +1,48 @@
 {% load static %}
 <div class="top-nav">
-						<label class="mobile_menu" for="mobile_menu">
-						<span>Menu</span>
-						</label>
-						<input id="mobile_menu" type="checkbox">
-					   <ul class="nav">
-						  <li class="dropdown1"><a href="{% url 'bicycles' %}">BICYCLES</a>
-							  <ul class="dropdown2">
-									<li><a href="{% url 'bicycles' %}">FIXED / SINGLE SPEED</a></li>
-									<li><a href="{% url 'bicycles' %}">CITY BIKES</a></li>
-									<li><a href="{% url 'bicycles' %}">PREMIUM SERIES</a></li>
-							  </ul>
-						  </li>
-						  <li class="dropdown1"><a href="{% url 'parts' %}">PARTS</a>
-							 <ul class="dropdown2">
-									<li><a href="{% url 'parts' %}">CHAINS</a></li>
-									<li><a href="{% url 'parts' %}">TUBES</a></li>
-									<li><a href="{% url 'parts' %}">TIRES</a></li>
-									<li><a href="{% url 'parts' %}">DISC BREAKS</a></li>
-							  </ul>
-						 </li>
-						 <li class="dropdown1"><a href="{% url 'accessories' %}">ACCESSORIES</a>
-							 <ul class="dropdown2">
-									<li><a href="{% url 'accessories' %}">LOCKS</a></li>
-										<li><a href="{% url 'accessories' %}">HELMETS</a></li>
-										<li><a href="{% url 'accessories' %}">ARM COVERS</a></li>
-										<li><a href="{% url 'accessories' %}">JERSEYS</a></li>
-							  </ul>
-						 </li>
-						 <li class="dropdown1"><a href="{% url '404' %}">EXTRAS</a>
-							 <ul class="dropdown2">
-									<li><a href="{% url '404' %}">CLASSIC BELL</a></li>
-									<li><a href="{% url '404' %}">BOTTLE CAGE</a></li>
-									<li><a href="{% url '404' %}">TRUCK GRIP</a></li>
-							  </ul>
-						 </li>
-						  <a href="{% url 'basket:view' %}" class="shop">
-							<img src="{% static 'images/cart.png' %}" alt="/>
-								<span>{% if basket %} {{ basket|length }} {% endif %}</span>
-						  </a>
-					  </ul>
-				 </div>
+    <label class="mobile_menu" for="mobile_menu">
+        <span>Menu</span>
+    </label>
+    <input id="mobile_menu" type="checkbox">
+    <ul class="nav">
+        <li class="dropdown1"><a href="{% url 'bicycles' %}">BICYCLES</a>
+            <ul class="dropdown2">
+            <li><a href="{% url 'bicycles' %}">FIXED / SINGLE SPEED</a></li>
+            <li><a href="{% url 'bicycles' %}">CITY BIKES</a></li>
+            <li><a href="{% url 'bicycles' %}">PREMIUM SERIES</a></li>
+            </ul>
+        </li>
+        <li class="dropdown1"><a href="{% url 'parts' %}">PARTS</a>
+            <ul class="dropdown2">
+                <li><a href="{% url 'parts' %}">CHAINS</a></li>
+                <li><a href="{% url 'parts' %}">TUBES</a></li>
+                <li><a href="{% url 'parts' %}">TIRES</a></li>
+                <li><a href="{% url 'parts' %}">DISC BREAKS</a></li>
+            </ul>
+        </li>
+        <li class="dropdown1"><a href="{% url 'accessories' %}">ACCESSORIES</a>
+            <ul class="dropdown2">
+                <li><a href="{% url 'accessories' %}">LOCKS</a></li>
+                <li><a href="{% url 'accessories' %}">HELMETS</a></li>
+                <li><a href="{% url 'accessories' %}">ARM COVERS</a></li>
+                <li><a href="{% url 'accessories' %}">JERSEYS</a></li>
+            </ul>
+        </li>
+        <li class="dropdown1"><a href="{% url '404' %}">EXTRAS</a>
+            <ul class="dropdown2">
+                <li><a href="{% url '404' %}">CLASSIC BELL</a></li>
+                <li><a href="{% url '404' %}">BOTTLE CAGE</a></li>
+                <li><a href="{% url '404' %}">TRUCK GRIP</a></li>
+            </ul>
+        </li>
+        <a href="{% url 'basket:view' %}" class="shop">
+            <img src="{% static 'images/cart.png' %}" alt="/">
+            <span>
+                {% if basket %}
+                    {{ basket.0.total_cost|floatformat:0 }}
+                    ({{ basket.0.total_quantity }} ед.)
+                {% endif %}
+            </span>
+        </a>
+    </ul>
+</div>

@@ -1,9 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
-from django.contrib.auth import get_user_model
-from django.db import models
-
 from authapp.models import CommonUser
 from pages.models import Product
 
@@ -16,14 +13,14 @@ class BasketQuerySet(models.QuerySet):
         super().delete()
 
 
-class BasketItem(models.Model):
+class Basket(models.Model):
     objects = BasketQuerySet.as_manager()
 
     # user = models.ForeignKey(ShopUser, on_delete=models.CASCADE)
     user = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
-        related_name='user_basket'
+        related_name='basket'
     )
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=0)

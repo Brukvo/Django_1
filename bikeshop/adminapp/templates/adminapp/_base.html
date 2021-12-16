@@ -1,0 +1,15 @@
+{% load static %}
+
+<div class="admin_container">
+    <div class="h2 text-center head">
+      Панель администратора
+    </div>
+    {% block menu %}
+      <div class="admin_menu">
+        {% include 'adminapp/inc/menu.inc' %}
+      </div>
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+</div>

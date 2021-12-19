@@ -26,6 +26,7 @@ urlpatterns = [
     path('', index, name='main'),
     path('bicycles/', bicycles, name='bicycles'),
     path('bicycles/<int:pk>/', bicycles, name='bicycles_list'),
+    path('bicycles/<int:pk>/page/<int:page>/', bicycles, name='bikes_page'),
     path('not_found/', not_found, name='404'),
     path('parts/', parts, name='parts'),
     path('basket/', include('basketapp.urls', namespace='basket')),

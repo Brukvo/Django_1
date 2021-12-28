@@ -29,6 +29,7 @@ urlpatterns = [
     path('cart/', cart, name='cart'),
     path('accessories/', accessories, name='accessories'),
     path('single/', single, name='single'),
+    path('auth/', include('authapp.urls', namespace='auth')),
 ]
 
 if settings.DEBUG:

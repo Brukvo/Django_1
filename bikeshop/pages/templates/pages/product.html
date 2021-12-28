@@ -1,0 +1,86 @@
+{% extends 'pages/_base.html' %}
+{% load static %}
+
+<!-- {% static 'images/m1.jpg' %} m1.jpg to m4.jpg -->
+
+{% block 'content' %}
+<div class="product">
+    <div class="container">
+        <div class="ctnt-bar cntnt">
+            <div class="content-bar">
+                <div class="single-page">
+                    <div class="product-head">
+                        <a href="/">Home</a> <span>::</span>
+                    </div>
+                    <!--Include the Etalage files-->
+                    <link rel="stylesheet" href="{% static 'css/etalage.css' %}">
+                    <script src="{% static 'js/jquery.etalage.min.js' %}"></script>
+                    <script>
+                        jQuery(document).ready(function ($) {
+
+                            $('#etalage').etalage({
+                                thumb_image_width: 400,
+                                thumb_image_height: 400,
+                                source_image_width: 800,
+                                source_image_height: 1000,
+                                show_hint: true,
+                                click_callback: function (image_anchor, instance_id) {
+                                    alert('Callback example:\nYou clicked on an image with the anchor: "' + image_anchor + '"\n(in Etalage instance: "' + instance_id + '")');
+                                }
+                            });
+
+                        });
+                    </script>
+                    <!--//details-product-slider-->
+                    <div class="details-left-slider">
+                        <div class="grid images_3_of_2">
+                            <ul id="etalage">
+                                <li>
+                                    <a href="#">
+                                        <img class="etalage_thumb_image" src="/media/{{ product.img }}"
+                                            class="img-responsive" />
+                                        <img class="etalage_source_image" src="/media/{{ product.img }}"
+                                            class="img-responsive" title="" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="/media/{{ product.img }}"
+                                        class="img-responsive" />
+                                    <img class="etalage_source_image" src="/media/{{ product.img }}"
+                                        class="img-responsive" title="" />
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="/media/{{ product.img }}"
+                                        class="img-responsive" />
+                                    <img class="etalage_source_image" src="/media/{{ product.img }}"
+                                        class="img-responsive" />
+                                </li>
+                                <li>
+                                    <img class="etalage_thumb_image" src="/media/{{ product.img }}"
+                                        class="img-responsive" />
+                                    <img class="etalage_source_image" src="/media/{{ product.img }}"
+                                        class="img-responsive" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="details-left-info">
+                        <h3>{{ product.name }}</h3>
+                        <h4>{{ product.short }}</h4>
+                        <p><label>Цена: </label>{{ product.price }}<span>руб.</span></p>
+                        <div class="btn_form">
+                            <a href="/cart/">В корзину</a>
+                        </div>
+                        <div class="bike-type">
+                            <p>Раздел ::<a href="#">{{ product.category.name }}</a></p>
+                        </div>
+                        <h5>Полное описание ::</h5>
+                        <p class="desc">{{ product.desc }}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -3,8 +3,9 @@ from authapp.forms import ShopUserLoginForm, ShopUserRegisterForm, ShopUserEditF
 from django.contrib import auth
 from django.urls import reverse
 
+
 def login(request):
-    title = 'вход'
+    title = 'Вход в систему'
     login_form = ShopUserLoginForm(data=request.POST)
     
     if request.method == 'POST' and login_form.is_valid():
@@ -15,10 +16,13 @@ def login(request):
         
         if user and user.is_active:
             auth.login(request, user)
-            return HttpResponseRedirect(reverse('main'))
+            if 'next' in request.POST.keys():
+                return HttpResponseRedirect(request.POST['next'])
+            else:
+                return HttpResponseRedirect(reverse('main'))
             
-    content = {'title': title, 'login_form': login_form}
-    return render(request, 'authapp/login.html', content)
+    context = {'title': title, 'login_form': login_form, 'next': next}
+    return render(request, 'authapp/login.html', context)
 
 
 def logout(request):
@@ -27,7 +31,7 @@ def logout(request):
 
 
 def register(request):
-    title = 'регистрация'
+    title = 'Регистрация'
     
     if request.method == 'POST':
 	register_form = ShopUserRegisterForm(request.POST, request.FILES)

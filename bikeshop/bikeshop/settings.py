@@ -104,6 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'authapp.CommonUser'
+LOGIN_URL = '/auth/login'
 
 
 # Internationalization

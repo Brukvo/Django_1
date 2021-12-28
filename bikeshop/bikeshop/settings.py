@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'pages',
     'authapp',
     'basketapp',
+    'adminapp',
 ]
 
 MIDDLEWARE = [

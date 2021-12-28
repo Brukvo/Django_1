@@ -21,9 +21,11 @@ from django.conf.urls.static import static
 from pages.views import index, bicycles, not_found, parts, cart, accessories, single, product
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('admin/', include('adminapp.urls', namespace='admin')),
     path('', index, name='main'),
-    path('bicycles/<int:pk>/', bicycles, name='bicycles'),
+    path('bicycles/', bicycles, name='bicycles'),
+    path('bicycles/<int:pk>/', bicycles, name='bicycles_list'),
     path('not_found/', not_found, name='404'),
     path('parts/', parts, name='parts'),
     path('basket/', include('basketapp.urls', namespace='basket')),

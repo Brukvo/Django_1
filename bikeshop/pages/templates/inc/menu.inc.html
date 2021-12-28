@@ -35,6 +35,9 @@
 									<li><a href="{% url '404' %}">TRUCK GRIP</a></li>
 							  </ul>
 						 </li>
-						  <a class="shop" href="{% url 'cart' %}"><img src="{% static 'images/cart.png' %}" alt="/></a>
+						  <a href="{% url 'basket:view' %}" class="shop">
+							<img src="{% static 'images/cart.png' %}" alt="/>
+								<span>{% if basket %} {{ basket|length }} {% endif %}</span>
+						  </a>
 					  </ul>
 				 </div>

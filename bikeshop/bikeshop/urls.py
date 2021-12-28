@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -23,10 +23,10 @@ from pages.views import index, bicycles, not_found, parts, cart, accessories, si
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='main'),
-    path('bicycles/', bicycles, name='bicycles'),
+    path('bicycles/<int:pk>/', bicycles, name='bicycles'),
     path('not_found/', not_found, name='404'),
     path('parts/', parts, name='parts'),
-    path('cart/', cart, name='cart'),
+    path('basket/', include('basketapp.urls', namespace='basket')),
     path('accessories/', accessories, name='accessories'),
     path('single/', single, name='single'),
     path('auth/', include('authapp.urls', namespace='auth')),

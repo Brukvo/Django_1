@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from pages.models import Product, Category
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 def index(request):
@@ -16,7 +17,7 @@ def index(request):
     return render(request, 'pages/index.html', context)
 
 
-def bicycles(request, pk=None):
+def bicycles(request, pk=None, page=1):
     links_menu = Category.objects.all()
     title = {
         'site': 'ВелоЗапча',
@@ -35,11 +36,19 @@ def bicycles(request, pk=None):
             category = get_object_or_404(Category, pk=pk)
             products = Product.objects.filter(category__pk=pk).order_by('price')
 
+        paginator = Paginator(products, 2)
+        try:
+            products_paginator = paginator.page(page)
+        except PageNotAnInteger:
+            products_paginator = paginator.page(1)
+        except EmptyPage:
+            products_paginator = paginator.page(paginator.num_pages)
+
         context = {
             'title': title,
             'links_menu': links_menu,
             'category': category,
-            'products': products,
+            'products': products_paginator,
             'basket': basket,
         }
 
